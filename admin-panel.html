@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Moderation | SubmissionHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body style="background: #F3F4F6;">
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"><i class="fas fa-shield-alt"></i> Admin Panel</a>
+                <div class="nav-links">
+                    <a href="index.html">Logout</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 3rem;">
+        <div style="margin-bottom: 2rem;">
+            <h1>Moderation Queue</h1>
+            <p style="color: var(--text-muted);">Review pending user submissions</p>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Image Preview</th>
+                        <th>Identifier</th>
+                        <th>Type</th>
+                        <th>User</th>
+                        <th>Submitted</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="row-4421">
+                        <td><img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=60" style="border-radius:4px;"></td>
+                        <td><strong>SN-9921-X</strong></td>
+                        <td><span class="badge badge-type-a">Hardware</span></td>
+                        <td>Alex Johnson<br><small style="color:var(--text-muted)">alex@example.com</small></td>
+                        <td>2h ago</td>
+                        <td>
+                            <div style="display:flex; gap: 0.5rem;">
+                                <button class="btn btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; background: #10B981;" onclick="adminAction('Approved', 4421)">Approve</button>
+                                <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; color: #EF4444;" onclick="adminAction('Rejected', 4421)">Reject</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr id="row-4422">
+                        <td><img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=60" style="border-radius:4px;"></td>
+                        <td><strong>SN-1022-Y</strong></td>
+                        <td><span class="badge badge-type-b">Peripheral</span></td>
+                        <td>Sarah Kong<br><small style="color:var(--text-muted)">sarah@example.com</small></td>
+                        <td>5h ago</td>
+                        <td>
+                            <div style="display:flex; gap: 0.5rem;">
+                                <button class="btn btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; background: #10B981;" onclick="adminAction('Approved', 4422)">Approve</button>
+                                <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.8rem; color: #EF4444;" onclick="adminAction('Rejected', 4422)">Reject</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

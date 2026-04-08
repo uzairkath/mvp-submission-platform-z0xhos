@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashboard | SubmissionHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"><i class="fas fa-rocket"></i> SubmissionHub</a>
+                <div class="nav-links">
+                    <a href="admin-panel.html" style="font-size: 0.8rem; color: var(--text-muted);">Admin Portal</a>
+                    <div style="display:flex; align-items: center; gap: 0.5rem;">
+                        <img src="https://ui-avatars.com/api/?name=John+Doe&background=3B82F6&color=fff" style="width: 32px; height: 32px; border-radius: 50%;">
+                        <span style="font-weight: 600;">John Doe</span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding-top: 3rem;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem;">
+            <div class="card" style="padding: 1.5rem;">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Total Submissions</p>
+                <h2 style="font-size: 2rem;">12</h2>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Points Earned</p>
+                <h2 style="font-size: 2rem; color: var(--primary);">450</h2>
+            </div>
+            <div class="card" style="padding: 1.5rem;">
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Approval Rate</p>
+                <h2 style="font-size: 2rem;">92%</h2>
+            </div>
+        </div>
+
+        <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+            <h2>My Submissions</h2>
+            <div style="display:flex; gap: 0.5rem;">
+                <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;" onclick="filterSubmissions('all')">All</button>
+                <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;" onclick="filterSubmissions('Pending')">Pending</button>
+                <button class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;" onclick="filterSubmissions('Approved')">Approved</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Submission ID</th>
+                        <th>Item</th>
+                        <th>Date</th>
+                        <th>Type</th>
+                        <th>Status</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody id="submission-table-body">
+                    <tr class="sub-row" data-status="Approved">
+                        <td>#9921</td>
+                        <td>Modern Desk Setup</td>
+                        <td>Oct 24, 2023</td>
+                        <td><span class="badge badge-type-a">Hardware</span></td>
+                        <td><span class="badge badge-approved">Approved</span></td>
+                        <td><strong>+50</strong></td>
+                    </tr>
+                    <tr class="sub-row" data-status="Pending">
+                        <td>#9922</td>
+                        <td>Mechanical Keyboard</td>
+                        <td>Oct 25, 2023</td>
+                        <td><span class="badge badge-type-b">Component</span></td>
+                        <td><span class="badge badge-pending">Pending</span></td>
+                        <td>0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

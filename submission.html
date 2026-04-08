@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit Entry | SubmissionHub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"><i class="fas fa-rocket"></i> SubmissionHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="step-container">
+        <!-- Step 1: Upload -->
+        <div id="step-1" class="step active">
+            <h2 style="margin-bottom: 0.5rem;">Upload Image</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Take a clear photo of your setup.</p>
+            
+            <div class="upload-box" onclick="nextStep()">
+                <i class="fas fa-cloud-upload-alt" style="font-size: 3rem; color: var(--primary); margin-bottom: 1rem;"></i>
+                <p>Click to upload or drag and drop</p>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">PNG, JPG up to 10MB</span>
+            </div>
+            <button class="btn btn-primary" style="width:100%" onclick="nextStep()">Continue</button>
+        </div>
+
+        <!-- Step 2: Details -->
+        <div id="step-2" class="step">
+            <h2 style="margin-bottom: 0.5rem;">Entry Details</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Provide identifiers for your submission.</p>
+            
+            <div class="form-group">
+                <label>Serial Number or Label</label>
+                <input type="text" placeholder="e.g. SN-9921-X">
+            </div>
+            
+            <div class="form-group">
+                <label>Submission Type</label>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <button class="btn btn-outline" onclick="this.style.borderColor='var(--primary)'">Hardware</button>
+                    <button class="btn btn-outline" onclick="this.style.borderColor='var(--primary)'">Peripheral</button>
+                </div>
+            </div>
+
+            <button class="btn btn-primary" style="width:100%; margin-top: 1rem;" onclick="submitForm()">Submit Entry</button>
+        </div>
+
+        <!-- Step 3: Success -->
+        <div id="step-3" class="step" style="text-align: center;">
+            <div style="color: #10B981; font-size: 4rem; margin-bottom: 1.5rem;">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h2 style="margin-bottom: 1rem;">Submission Received!</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Your entry is now <strong>pending review</strong>. You will be notified once an admin has verified it.</p>
+            
+            <button class="btn btn-primary" style="width:100%;" onclick="navigateTo('dashboard.html')">Track in Dashboard</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

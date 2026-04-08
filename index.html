@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVP Submission Platform | Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo"><i class="fas fa-rocket"></i> SubmissionHub</a>
+                <div class="nav-links">
+                    <a href="login.html">Login</a>
+                    <a href="login.html" class="btn btn-primary">Sign Up</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Discover and showcase <br><span style="color:var(--primary)">curated artifacts.</span></h1>
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search for items, categories or users..." onkeypress="handleSearch(event)">
+            </div>
+            <div style="margin-top: 3rem; color: var(--text-muted);">
+                <p>Trending: Mechanical Keyboards, Ergonomic Desks, Art Deco</p>
+            </div>
+        </section>
+
+        <section>
+            <div style="display:flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <h2>Featured Items</h2>
+                <a href="search-results.html" style="color: var(--primary); font-weight: 600;">View all &rarr;</a>
+            </div>
+            <div class="grid" id="featured-grid">
+                <div class="card" onclick="navigateTo('item-detail.html')" style="cursor:pointer">
+                    <img src="https://images.unsplash.com/photo-1493934558415-9d19f0b2b4d2?auto=format&fit=crop&w=400" class="card-img">
+                    <div class="card-content">
+                        <h3>Modern Desk Setup</h3>
+                        <p style="color:var(--text-muted); font-size: 0.9rem;">12 User Submissions</p>
+                    </div>
+                </div>
+                <div class="card" onclick="navigateTo('item-detail.html')" style="cursor:pointer">
+                    <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=400" class="card-img">
+                    <div class="card-content">
+                        <h3>Minimalist Living Room</h3>
+                        <p style="color:var(--text-muted); font-size: 0.9rem;">8 User Submissions</p>
+                    </div>
+                </div>
+                <div class="card" onclick="navigateTo('item-detail.html')" style="cursor:pointer">
+                    <img src="https://images.unsplash.com/photo-1511467687858-23d96c32e4ae?auto=format&fit=crop&w=400" class="card-img">
+                    <div class="card-content">
+                        <h3>Mechanical Keyboard</h3>
+                        <p style="color:var(--text-muted); font-size: 0.9rem;">24 User Submissions</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
